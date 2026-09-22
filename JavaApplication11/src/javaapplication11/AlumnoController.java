@@ -37,12 +37,14 @@ public class AlumnoController
     public void Listar()
     {
         System.out.println("------------------------ALUMNOS REGISTRADOS----------------------------");
+        System.out.println();
         for(Alumno a : listaAlumnos)
         {
             System.out.println(a.MostrarDatos());
             double total = a.CalcularPension();
             System.out.println("------TOTAL PENSION DE "+a.getNombre().toUpperCase()+"------");
             System.out.println(total);
+            System.out.println();
         }
     }
 }
