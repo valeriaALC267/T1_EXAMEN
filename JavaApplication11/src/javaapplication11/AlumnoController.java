@@ -137,5 +137,38 @@ public class AlumnoController
         }
         this.tipo_beca = tipo_beca;
     }
-    
+    public String MostrarDatos()
+    {
+        return "NOMBRE: "+this.nombre+" |APELLIDO.P: "+this.apellido_p+" |APELLIDO.M: "+this.apellido_m+" |TIPO DOC: "+this.tipo_doc+" |NRO. DOC: "+this.nro_doc+
+              " |NIVEL SOCIEOEC.: "+this.nv_socioec+" |TIPO BECA: "+this.tipo_beca;
+    }
+    public double CalcularPension()
+    {
+        
+        double p = 0.0;
+        if(this.nv_socioec.equalsIgnoreCase("a"))
+        {
+            p = 1010.30;
+        }
+        else if(this.nv_socioec.equalsIgnoreCase("b"))
+        {
+            p = 710.11;
+        }
+        else if(this.nv_socioec.equalsIgnoreCase("c"))
+        {
+            p = 520.26;
+        }
+        
+        double tip_b = 0.0;
+        if(this.tipo_beca.equalsIgnoreCase("total"))
+        {
+            tip_b =0.0;
+        }
+        else if(this.tipo_beca.equalsIgnoreCase("parcial"))
+        {
+            tip_b = 0.5;
+        }
+        double pension_final = p * tip_b;
+        return  pension_final;
+    }
 }
