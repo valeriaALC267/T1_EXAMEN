@@ -36,6 +36,7 @@ public class AlumnoController
     }
     public void Listar()
     {
+        System.out.println("------------------------ALUMNOS REGISTRADOS----------------------------");
         for(Alumno a : listaAlumnos)
         {
             System.out.println(a.MostrarDatos());

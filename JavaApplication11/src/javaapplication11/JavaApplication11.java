@@ -97,7 +97,7 @@ public class JavaApplication11 {
             {
                 try 
                 {
-                    System.out.println("Nivel Socioeconomico:");
+                    System.out.println("Nivel Socioeconomico (A/B/C):");
                     a.setNv_socioec(teclado.nextLine());
                     nv = true;
                 } 
@@ -112,8 +112,8 @@ public class JavaApplication11 {
             {
                 try 
                 {
-                    System.out.println("Tipo beca:");
-                    a.setNombre(teclado.nextLine());
+                    System.out.println("Tipo beca (total/parcial/ninguna):");
+                    a.setTipo_beca(teclado.nextLine());
                     b = true;
                 } 
                 catch (IllegalArgumentException e)
@@ -121,7 +121,16 @@ public class JavaApplication11 {
                     System.out.println(e.getMessage());
                 }
             }
-        } while (true);
+            ac.Agregar(a);
+            System.out.println(a.MostrarDatos());
+            double p = a.CalcularPension();
+            System.out.println("-TOTAL PENSION-");
+            System.out.println(p);
+            System.out.println("Desea registrar otro alumno? (s/n)");
+            r = teclado.nextLine();
+        } while (r.equalsIgnoreCase("s"));
+        
+        ac.Listar();
     }
     
 }

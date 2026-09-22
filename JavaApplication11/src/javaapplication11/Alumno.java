@@ -138,7 +138,7 @@ public class Alumno
         {
             throw new IllegalArgumentException("Ups! Debe llenar este campo primero, por favor.");
         }
-        if(!tipo_beca.equalsIgnoreCase("total") && !tipo_beca.equalsIgnoreCase("parcial"))
+        if(!tipo_beca.equalsIgnoreCase("total") && !tipo_beca.equalsIgnoreCase("parcial") && !tipo_beca.equalsIgnoreCase("ninguna"))
         {
             throw new IllegalArgumentException("Ups! Este tipo de beca no es valido. Intente de nuevo, por favor");
         }
@@ -174,6 +174,10 @@ public class Alumno
         else if(this.tipo_beca.equalsIgnoreCase("parcial"))
         {
             tip_b = 0.5;
+        }
+        else if(this.tipo_beca.equalsIgnoreCase("ninguna"))
+        {
+            tip_b = 1.0;
         }
         double pension_final = p * tip_b;
         return  pension_final;
