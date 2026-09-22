@@ -40,6 +40,9 @@ public class AlumnoController
         for(Alumno a : listaAlumnos)
         {
             System.out.println(a.MostrarDatos());
+            double total = a.CalcularPension();
+            System.out.println("------TOTAL PENSION DE "+a.getNombre().toUpperCase()+"------");
+            System.out.println(total);
         }
     }
 }
